@@ -1,3 +1,14 @@
+
+<button (click)='setShape("square")' selected>Square</button>
+<button (click)='setShape("triangle")'>Triangle</button>
+<button (click)='setShape("circle")'>Circle</button>
+<button (click)='setShape("parallelogram")'>Parallelogram</button>
+<br>
+<input type='number' [(ngModel)]='param1' placeholder="param1"/>
+<input type='number' *ngIf='currentShapeValue === "triangle" || currentShapeValue === "parallelogram"' [(ngModel)]='param2' placeholder="param2"/>
 <p class="red">
-  shape works!
+  {{currentShapeValue}}
 </p>
+<button (click)='generate()'>Generate</button>
+<p>Area:{{currentShape.getArea()}}</p>
+<p>Perimeter:{{currentShape.getPerimeter()}}</p>
